@@ -16,6 +16,7 @@ if(isset($_POST['content']))
       }else{
 		if ($result) {
 			echo "i am done";
+			header("location:index.php?msg=<h4>Concept data has been saved</h4>");
 	} else 
 	{
 			echo "failure";

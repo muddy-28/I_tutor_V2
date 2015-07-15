@@ -16,11 +16,17 @@ require_once("classes/Login.php");
 // create a login object. when this object is created, it will do all login/logout stuff automatically
 // so this single line handles the entire login process. in consequence, you can simply ...
 $login = new Login();
-
 // ... ask if we are logged in here:
 if ($login->isUserLoggedIn() == true) {
     if($login->isStudent() == true)
-    include("views/student/student.php");
+	{
+    	if(isset($_GET['msg']))
+		{
+			$msg=$_GET['msg'];
+			echo $msg;
+		}
+		include("views/student/student.php");
+	}
 	if($login->isTeacher() == true)
 	{
 		if(isset($_GET['msg']))
@@ -28,12 +34,10 @@ if ($login->isUserLoggedIn() == true) {
 			$msg=$_GET['msg'];
 			echo $msg;
 		}
-		include("views/teacher/teacher.php");
-		
+		include("views/teacher/teacher.php");		
 	}	
 	if($login->isAdmin() == true)
     include("views/admin/admin.php");
-
 } else {
     // the user is not logged in.
 	include("views/not_logged_in.php");

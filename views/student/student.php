@@ -1,7 +1,7 @@
 <?php
 if ($_SESSION['user_type']=="student") 
 {
-    include("views/student/teacher_menu.php");	  
+    include("views/student/student_menu.php");	  
 	echo "<br>";
 	/* gets the variable $page */
 	if (!empty($_GET['page'])) {

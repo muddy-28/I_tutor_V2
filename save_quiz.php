@@ -87,5 +87,5 @@ echo create_question($sql4);
 echo create_question($sql5);
 
 
-header("location:index.php?msg=Created Quiz has been saved");
+header("location:index.php?msg=<h3>Created Quiz has been saved</h3>");
 ?>

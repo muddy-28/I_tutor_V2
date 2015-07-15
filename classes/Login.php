@@ -50,8 +50,7 @@ class Login
         } elseif (empty($_POST['user_password'])) {
             $this->errors[] = "Password field was empty.";
         } elseif (!empty($_POST['user_name']) && !empty($_POST['user_password'])) {
-
-            // create a database connection, using the constants from config/db.php (which we loaded in index.php)
+  // create a database connection, using the constants from config/db.php (which we loaded in index.php)
             $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
             // change character set to utf8 and check it
@@ -65,7 +64,7 @@ class Login
                 // escape the POST stuff
                 $user_name = $this->db_connection->real_escape_string($_POST['user_name']);
 
-                // database query, getting all the info of the selected user (allows login via email address in the
+      // database query, getting all the info of the selected user (allows login via email address in the
                 // username field)
                 $sql = "SELECT user_id, user_name, user_email, user_password_hash, user_type
                         FROM users
