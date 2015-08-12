@@ -11,7 +11,9 @@ if ($_SESSION['user_type']=="student")
 		include($page);
 	} 	/* if $page has a value, include it */
 	else {
+		
 		echo "<h3>welcom mr ".$_SESSION['user_name']."</h3>";
+		echo "<h4>Sorry module Doesnot exist</h4>";
 	} 	/* otherwise, include the default page */
 }
 ?><!-- because people were asking: "index.php?logout" is just my simplified form of "index.php?logout=true" -->

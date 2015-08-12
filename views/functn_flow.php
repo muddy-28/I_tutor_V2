@@ -29,19 +29,20 @@ function get_maps($usr)
 function get_nodes($mapi)
 {
         $con = connectToDatabase();
-	 	$sql1 = "SELECT `map_id`, `node_id`, `nodeID`, `nodeName` FROM `nodes` WHERE map_id='$mapi'";
+	 	$sql1 = "SELECT * FROM `nodes` WHERE map_id='$mapi'";
 		$result=mysqli_query($con,$sql1)or die(mysql_error(). "Query Failed");
-    
-      if (mysql_error()) 
-      {
-        $message = mysql_error()."Query Failed";
-      }else{
+	if (mysql_error()) 
+		{
+        	$message = mysql_error()."Query Failed";
+      	}
+	else{
 		  if ($result) {
     // output data of each row
-     while ($row = mysqli_fetch_row($result)) 
+    while ($row = mysqli_fetch_row($result)) 
         {
-         //   echo "<br>map_id:-".$row['0']."<br>node_id:-".$row['2']."<br>node_name:-".$row['3'];
-		 	chk_node_prent_child($mapi,$row['2']);
+           //   echo "<br>map_id:-".$row['0']."<br>node_id:-".$row['2']."<br>node_name:-".$row['3'];
+		   //	get_single_node($mapi,$row['2'],"p");
+		   	chk_node_prent_child($mapi,$row['2']);
 	 }
 } else 
 {
@@ -113,11 +114,22 @@ function get_single_node($mapi,$id_node,$as)
         {
 		 if($as=="p")
 			// $data=stripslashes($row['0']);
-		 {   echo "<li><a href=\"index.php?page=get_node_data&&data_map_id={$row['0']} && node_id={$row['2']}\">{$row['3']}</a>"."map_id:-".$row['0']." node_id:-".$row['2']." node_name:-".$row['3']."</li>";
+		 {   
+			 if($count1<1)
+			 echo "<li><a href=\"index.php?page=get_node_data&&data_map_id={$row['0']} && node_id={$row['2']}\">{$row['3']}</a></li>";
 		 }
-		 else
+		 if($as=="c")
 		 {
-			 echo "<li><ul><li><a href=\"index.php?page=get_node_data&&data_map_id={$row['0']}&&node_id={$row['2']}\">{$row['3']}</a>"."map_id:-".$row['0']." node_id:-".$row['2']." node_name:-".$row['3']."</li></ul></li>";
+			 echo "<li style=\"margin-left:40;\"><a href=\"index.php?page=get_node_data&&data_map_id={$row['0']}&&node_id={$row['2']}\">{$row['3']}</a></li>";
+		 
+		 }
+		 		else if($as=="pp")
+			// $data=stripslashes($row['0']);
+		 {   echo "<li style=\"margin-left:40;\"><a href=\"index.php?page=get_node_data&&data_map_id={$row['0']} && node_id={$row['2']}\">{$row['3']}</a></li>";
+		 }
+		 if($as=="cc")
+		 {
+			 echo "<li style=\"margin-left:80;\"><a href=\"index.php?page=get_node_data&&data_map_id={$row['0']}&&node_id={$row['2']}\">{$row['3']}</a></li>";
 		 
 		 }
 			 
@@ -140,19 +152,67 @@ function chk_node_prent_child($mapi,$node_id)
         $message = mysql_error()."Query Failed";
       }else{
 		  if ($result) {
-     while ($row = mysqli_fetch_row($result)) 
+       while ($row = mysqli_fetch_row($result)) 
         {	
 		 if($row[0]==$node_id)
-			{
-				get_single_node($mapi,$node_id,"p");
-			 	get_single_node($mapi,$row['2'],"c");
+			 {
+			 if($count1==0)
+			 {
+				 get_single_node($mapi,$node_id,"p");
+				 get_single_node($mapi,$row['2'],"c");
+				 chk_node_prent_child_child($mapi,$row['2']);
+				 $count1++;
+				// echo $count1;
 			 }
-		 else if ($count>0){
-		 		get_single_node($mapi,$row['2'],"c");
+			 else
+			 {
+				 get_single_node($mapi,$row['2'],"c");				 chk_node_prent_child_child($mapi,$row['2']);
+
+			 }
+		 	}
+		 else {
+		 		get_single_node($mapi,$row['2'],"c");				 chk_node_prent_child_child($mapi,$row['2']);
+
 			 
 		 }
 		 
-	 }
+	 	}
+} else 
+
+    echo "0 results for maps to user ".$_SESSION['user_name'];
+}
+}
+function chk_node_prent_child_child($mapi,$node_id)
+{
+		$con = connectToDatabase();
+	 	$sql1 = "SELECT * FROM `rltn4rm_p2c` WHERE map_id='$mapi' && src_node_id ='$node_id'";
+		$result=mysqli_query($con,$sql1)or die(mysql_error(). "Query Failed");
+      if (mysql_error()) 
+      {
+        $message = mysql_error()."Query Failed";
+      }else{
+		  if ($result) {
+       while ($row = mysqli_fetch_row($result)) 
+        {	
+		 if($row[0]==$node_id)
+			 {
+			 if($count2==0)
+			 {
+				 get_single_node($mapi,$node_id,"pc");
+				 get_single_node($mapi,$row['2'],"cc");
+				 $count2++;
+				// echo $count1;
+			 }
+			 else
+			 {
+				 get_single_node($mapi,$row['2'],"cc");
+			 }
+		 	}
+		 else {
+		 		get_single_node($mapi,$row['2'],"cc");
+		 	  }
+		 
+	 	}
 } else 
 
     echo "0 results for maps to user ".$_SESSION['user_name'];

@@ -23,6 +23,26 @@ if(isset($_POST['content']))
 		}
       }   
 }
+if(isset($_POST['content1']))
+{
+	$content1=addslashes($_POST['content1']);
+	$sql1="UPDATE `nodes` SET `node_content_1`='$content1' WHERE map_id='$mapi_data_insert' && nodeID='$node_id'";
+	
+	$con = connectToDatabase();
+	$result=mysqli_query($con,$sql1)or die(mysql_error(). "Query Failed");
+    if (mysql_error()) 
+      {
+        mysql_error()."Query Failed";
+      }else{
+		if ($result) {
+			echo "i am done";
+			header("location:index.php?msg=<h4>Concept data has been saved</h4>");
+	} else 
+	{
+			echo "failure";
+		}
+      }   
+}
 
 
 
@@ -52,9 +72,15 @@ tinymce.init({
 </script>
 
 <form method="post" action="#">
-	<label>Enter Concept Material</label>
-    <textarea name="content" style="width:100%"></textarea>
+	<label>Enter Concept Material Lecture #1</label>
+	<textarea name="content" style="width:100%"></textarea>
+<br>
+<br>
+<br>
+	<label>Enter Concept Material Lecture #2</label>
+	<textarea name="content1" style="width:100%"></textarea>
 	<button type="submit">Save Concept Material</button>
 </form>
-	</body>
+</body>
+
 </html>

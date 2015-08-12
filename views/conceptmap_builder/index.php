@@ -16,9 +16,7 @@
 	<hr style="margin:50px">
 	<div style="width: 100%; overflow: hidden;">
 		<div style="width: 150px; float: left;">
-			<br>
-			<br>
-
+			
 			<br>
 			<button ng-click="addNewNode()" title="Add a new node to the chart">
 				Add Node
@@ -40,14 +38,12 @@
 			</button>
 			<br>
 			<br>
-
 			<form action="#" method="POST">
-				<textarea name="json_obj" hidden="true" style="width: 100%; height: 100%;" chart-json-edit view-model="chartViewModel">
+				<textarea name="json_obj" hidden="true" style=" width: 100%; height: 100%;" chart-json-edit view-model="chartViewModel">
 				</textarea>
-
-				<button type="submit">Save ConceptMap</button>
+				<input type="text" name="name" required></input>
+				<button type="submit" >Save ConceptMap</button>	
 			</form>
-
 		</div>
 		<div style="margin-left: 200px;">
 
@@ -82,7 +78,7 @@ require_once("views/function.php");
 if(isset($_POST['json_obj']))
 {    echo $_POST['json_obj']."<br><br>";
     $map=$_POST['json_obj'];
- 	$ma_name=$_POST['map_name'];
+ 	$map_name=$_POST['name'];
  
 
 $servername = "localhost";
@@ -91,7 +87,7 @@ $password = "mysql";
 $dbname = "conceptmap_builder";
 ?>
 <?php
-// Create connection
+// Create connectionjwhdhaaaaaaa
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
@@ -99,7 +95,7 @@ if ($conn->connect_error) {
 } 
  $USR= $_SESSION['user_name'];
 //
-$sql_map = "INSERT INTO `concept-maps` (`map_id`, `map_data`, `map_created_by`, `created_on`) VALUES (NULL,'$map','$USR', CURRENT_TIMESTAMP)";
+$sql_map = "INSERT INTO `concept-maps` (`map_id`, `map_data`, `map_created_by`, `created_on` ,`name`) VALUES (NULL,'$map','$USR', CURRENT_TIMESTAMP, '$map_name')";
 
 if ($conn->query($sql_map) === TRUE) {
     $last_map = $conn->insert_id;

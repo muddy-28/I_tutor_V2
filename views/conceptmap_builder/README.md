@@ -96,3 +96,7 @@ Be sure to bind your view-model as the 'chart' attribute!
 
 
 Have fun and please contribute!
+
+Adnan Shafique
+11105033@gift.edu.pk
+muddy-28

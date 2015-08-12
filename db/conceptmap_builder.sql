@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.3.9
+-- version 4.4.12
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 15, 2015 at 04:27 AM
--- Server version: 5.6.23
--- PHP Version: 5.3.29
+-- Generation Time: Aug 10, 2015 at 07:04 AM
+-- Server version: 5.6.25
+-- PHP Version: 5.6.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `conceptmap_builder`
@@ -31,27 +31,20 @@ CREATE TABLE IF NOT EXISTS `concept-maps` (
   `map_data` text NOT NULL,
   `map_created_by` varchar(25) NOT NULL,
   `created_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `name` varchar(255) NOT NULL,
   `map_title` varchar(255) NOT NULL COMMENT 'concept map title'
-) ENGINE=InnoDB AUTO_INCREMENT=1270 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1308 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `concept-maps`
 --
 
-INSERT INTO `concept-maps` (`map_id`, `map_data`, `map_created_by`, `created_on`, `map_title`) VALUES
-(1257, '{\r\n    "nodes": [\r\n        {\r\n            "name": "home",\r\n            "id": 10,\r\n            "x": 261,\r\n            "y": 159,\r\n            "inputConnectors": [],\r\n            "outputConnectors": [\r\n                {\r\n                    "name": "school"\r\n                },\r\n                {\r\n                    "name": "colg"\r\n                },\r\n                {\r\n                    "name": "univ"\r\n                }\r\n            ],\r\n            "width": 200\r\n        },\r\n        {\r\n            "name": "school",\r\n            "id": 11,\r\n            "x": 575,\r\n            "y": 94,\r\n            "inputConnectors": [\r\n                {\r\n                    "name": "matric"\r\n                }\r\n            ],\r\n            "outputConnectors": [],\r\n            "width": 200\r\n        },\r\n        {\r\n            "name": "uni",\r\n            "id": 13,\r\n            "x": 571,\r\n            "y": 292,\r\n            "inputConnectors": [\r\n                {\r\n                    "name": "bscs"\r\n                }\r\n            ],\r\n            "outputConnectors": [],\r\n            "width": 200\r\n        },\r\n        {\r\n            "name": "colg",\r\n            "id": 12,\r\n            "x": 572,\r\n            "y": 193,\r\n            "inputConnectors": [\r\n                {\r\n                    "name": "ics"\r\n                }\r\n            ],\r\n            "outputConnectors": [],\r\n            "width": 200\r\n        }\r\n    ],\r\n    "connections": [\r\n        {\r\n            "source": {\r\n                "nodeID": 10,\r\n                "connectorIndex": 0\r\n            },\r\n            "dest": {\r\n                "nodeID": 11,\r\n                "connectorIndex": 0\r\n            }\r\n        },\r\n        {\r\n            "source": {\r\n                "nodeID": 10,\r\n                "connectorIndex": 1\r\n            },\r\n            "dest": {\r\n                "nodeID": 12,\r\n                "connectorIndex": 0\r\n            }\r\n        },\r\n        {\r\n            "source": {\r\n                "nodeID": 10,\r\n                "connectorIndex": 2\r\n            },\r\n            "dest": {\r\n                "nodeID": 13,\r\n                "connectorIndex": 0\r\n            }\r\n        }\r\n    ]\r\n}', 'teacher', '2015-06-20 20:52:42', ''),
-(1258, '{\r\n    "nodes": [\r\n        {\r\n            "name": "hbhsbcs",\r\n            "id": 10,\r\n            "x": 0,\r\n            "y": 0,\r\n            "inputConnectors": [],\r\n            "outputConnectors": [],\r\n            "width": 200\r\n        }\r\n    ],\r\n    "connections": []\r\n}', 'teacher', '2015-06-23 04:54:44', ''),
-(1259, '{\n    "nodes": [\n        {\n            "name": "hxbxahbxahbx",\n            "id": 10,\n            "x": 1113,\n            "y": 650,\n            "inputConnectors": [\n                {\n                    "name": "New connector"\n                }\n            ],\n            "outputConnectors": [],\n            "width": 200\n        },\n        {\n            "name": "xwbhxwbxhwx",\n            "id": 11,\n            "x": 825,\n            "y": 594,\n            "inputConnectors": [\n                {\n                    "name": "s"\n                }\n            ],\n            "outputConnectors": [\n                {\n                    "name": "as"\n                }\n            ],\n            "width": 200\n        },\n        {\n            "name": "ahbhabx",\n            "id": 12,\n            "x": 565,\n            "y": 505,\n            "inputConnectors": [\n                {\n                    "name": "sxa"\n                }\n            ],\n            "outputConnectors": [\n                {\n                    "name": "New connector"\n                }\n            ],\n            "width": 200\n        },\n        {\n            "name": "haxahxbahxb",\n            "id": 13,\n            "x": 286,\n            "y": 340,\n            "inputConnectors": [],\n            "outputConnectors": [\n                {\n                    "name": "xaxa"\n                }\n            ],\n            "width": 200\n        }\n    ],\n    "connections": [\n        {\n            "source": {\n                "nodeID": 11,\n                "connectorIndex": 0\n            },\n            "dest": {\n                "nodeID": 10,\n                "connectorIndex": 0\n            }\n        },\n        {\n            "source": {\n                "nodeID": 12,\n                "connectorIndex": 0\n            },\n            "dest": {\n                "nodeID": 11,\n                "connectorIndex": 0\n            }\n        },\n        {\n            "source": {\n                "nodeID": 13,\n                "connectorIndex": 0\n            },\n            "dest": {\n                "nodeID": 12,\n                "connectorIndex": 0\n            }\n        }\n    ]\n}', 'teacher', '2015-06-27 23:44:00', ''),
-(1260, '{\r\n    "nodes": [\r\n        {\r\n            "name": "adnan",\r\n            "id": 10,\r\n            "x": 21,\r\n            "y": 104,\r\n            "inputConnectors": [],\r\n            "outputConnectors": [\r\n                {\r\n                    "name": "njdasd"\r\n                }\r\n            ],\r\n            "width": 200\r\n        },\r\n        {\r\n            "name": "jajdnad",\r\n            "id": 11,\r\n            "x": 364,\r\n            "y": 284,\r\n            "inputConnectors": [\r\n                {\r\n                    "name": "nnad"\r\n                }\r\n            ],\r\n            "outputConnectors": [\r\n                {\r\n                    "name": "jnasda"\r\n                },\r\n                {\r\n                    "name": "s"\r\n                }\r\n            ],\r\n            "width": 200\r\n        },\r\n        {\r\n            "name": "jand",\r\n            "id": 12,\r\n            "x": 693,\r\n            "y": 416,\r\n            "inputConnectors": [\r\n                {\r\n                    "name": "asd"\r\n                }\r\n            ],\r\n            "outputConnectors": [],\r\n            "width": 200\r\n        },\r\n        {\r\n            "name": "dada",\r\n            "id": 13,\r\n            "x": 690,\r\n            "y": 530,\r\n            "inputConnectors": [\r\n                {\r\n                    "name": "as"\r\n                }\r\n            ],\r\n            "outputConnectors": [],\r\n            "width": 200\r\n        }\r\n    ],\r\n    "connections": [\r\n        {\r\n            "source": {\r\n                "nodeID": 10,\r\n                "connectorIndex": 0\r\n            },\r\n            "dest": {\r\n                "nodeID": 11,\r\n                "connectorIndex": 0\r\n            }\r\n        },\r\n        {\r\n            "source": {\r\n                "nodeID": 11,\r\n                "connectorIndex": 0\r\n            },\r\n            "dest": {\r\n                "nodeID": 12,\r\n                "connectorIndex": 0\r\n            }\r\n        },\r\n        {\r\n            "source": {\r\n                "nodeID": 11,\r\n                "connectorIndex": 1\r\n            },\r\n            "dest": {\r\n                "nodeID": 13,\r\n                "connectorIndex": 0\r\n            }\r\n        }\r\n    ]\r\n}', 'teacher', '2015-06-28 11:51:35', ''),
-(1261, '{\r\n    "nodes": [\r\n        {\r\n            "name": "Mad",\r\n            "id": 10,\r\n            "x": 59,\r\n            "y": 155.00000762939453,\r\n            "inputConnectors": [],\r\n            "outputConnectors": [\r\n                {\r\n                    "name": "1"\r\n                },\r\n                {\r\n                    "name": "2"\r\n                }\r\n            ],\r\n            "width": 200\r\n        },\r\n        {\r\n            "name": "Lo",\r\n            "id": 12,\r\n            "x": 419,\r\n            "y": 244.00000762939453,\r\n            "inputConnectors": [\r\n                {\r\n                    "name": "1"\r\n                }\r\n            ],\r\n            "outputConnectors": [],\r\n            "width": 200\r\n        },\r\n        {\r\n            "name": "A",\r\n            "id": 13,\r\n            "x": 403,\r\n            "y": 57,\r\n            "inputConnectors": [\r\n                {\r\n                    "name": "1"\r\n                }\r\n            ],\r\n            "outputConnectors": [],\r\n            "width": 200\r\n        }\r\n    ],\r\n    "connections": [\r\n        {\r\n            "source": {\r\n                "nodeID": 10,\r\n                "connectorIndex": 0\r\n            },\r\n            "dest": {\r\n                "nodeID": 13,\r\n                "connectorIndex": 0\r\n            }\r\n        },\r\n        {\r\n            "source": {\r\n                "nodeID": 10,\r\n                "connectorIndex": 1\r\n            },\r\n            "dest": {\r\n                "nodeID": 12,\r\n                "connectorIndex": 0\r\n            }\r\n        }\r\n    ]\r\n}', 'teacher', '2015-07-02 04:27:04', ''),
-(1262, '{\r\n    "nodes": [\r\n        {\r\n            "name": "asd",\r\n            "id": 11,\r\n            "x": 121,\r\n            "y": 56,\r\n            "inputConnectors": [],\r\n            "outputConnectors": [\r\n                {\r\n                    "name": "New connector"\r\n                }\r\n            ],\r\n            "width": 200\r\n        },\r\n        {\r\n            "name": "as",\r\n            "id": 12,\r\n            "x": 443,\r\n            "y": 293,\r\n            "inputConnectors": [\r\n                {\r\n                    "name": "New connector"\r\n                }\r\n            ],\r\n            "outputConnectors": [\r\n                {\r\n                    "name": "New connector"\r\n                }\r\n            ],\r\n            "width": 200\r\n        },\r\n        {\r\n            "name": "as",\r\n            "id": 13,\r\n            "x": 743,\r\n            "y": 352,\r\n            "inputConnectors": [\r\n                {\r\n                    "name": "as"\r\n                }\r\n            ],\r\n            "outputConnectors": [],\r\n            "width": 200\r\n        }\r\n    ],\r\n    "connections": [\r\n        {\r\n            "source": {\r\n                "nodeID": 11,\r\n                "connectorIndex": 0\r\n            },\r\n            "dest": {\r\n                "nodeID": 12,\r\n                "connectorIndex": 0\r\n            }\r\n        },\r\n        {\r\n            "source": {\r\n                "nodeID": 12,\r\n                "connectorIndex": 0\r\n            },\r\n            "dest": {\r\n                "nodeID": 13,\r\n                "connectorIndex": 0\r\n            }\r\n        }\r\n    ]\r\n}', 'teacher', '2015-07-03 03:24:23', ''),
-(1263, '', 'teacher', '2015-07-07 02:04:43', ''),
-(1264, '{\r\n    "nodes": [\r\n        {\r\n            "name": "andand",\r\n            "id": 10,\r\n            "x": 224,\r\n            "y": 90,\r\n            "inputConnectors": [\r\n                {\r\n                    "name": "jsjdnads"\r\n                }\r\n            ],\r\n            "outputConnectors": [\r\n                {\r\n                    "name": "ajad"\r\n                }\r\n            ],\r\n            "width": 200\r\n        },\r\n        {\r\n            "name": "adahda",\r\n            "id": 11,\r\n            "x": 518,\r\n            "y": 228,\r\n            "inputConnectors": [\r\n                {\r\n                    "name": "hsaas"\r\n                }\r\n            ],\r\n            "outputConnectors": [],\r\n            "width": 200\r\n        }\r\n    ],\r\n    "connections": [\r\n        {\r\n            "source": {\r\n                "nodeID": 10,\r\n                "connectorIndex": 0\r\n            },\r\n            "dest": {\r\n                "nodeID": 11,\r\n                "connectorIndex": 0\r\n            }\r\n        }\r\n    ]\r\n}', 'teacher', '2015-07-09 05:39:09', ''),
-(1265, '{\r\n    "nodes": [\r\n        {\r\n            "name": "xnajxa",\r\n            "id": 10,\r\n            "x": 99,\r\n            "y": 131,\r\n            "inputConnectors": [\r\n                {\r\n                    "name": "jaxnax"\r\n                },\r\n                {\r\n                    "name": "xnaxax"\r\n                }\r\n            ],\r\n            "outputConnectors": [\r\n                {\r\n                    "name": "xjnaxnjax"\r\n                }\r\n            ],\r\n            "width": 200\r\n        },\r\n        {\r\n            "name": "jaxax",\r\n            "id": 11,\r\n            "x": 601,\r\n            "y": 218,\r\n            "inputConnectors": [\r\n                {\r\n                    "name": "ajsxa"\r\n                }\r\n            ],\r\n            "outputConnectors": [],\r\n            "width": 200\r\n        }\r\n    ],\r\n    "connections": [\r\n        {\r\n            "source": {\r\n                "nodeID": 10,\r\n                "connectorIndex": 0\r\n            },\r\n            "dest": {\r\n                "nodeID": 11,\r\n                "connectorIndex": 0\r\n            }\r\n        }\r\n    ]\r\n}', 'teacher', '2015-07-09 05:40:25', ''),
-(1266, '{\r\n    "nodes": [\r\n        {\r\n            "name": "adnan",\r\n            "id": 10,\r\n            "x": 49,\r\n            "y": 223,\r\n            "inputConnectors": [],\r\n            "outputConnectors": [\r\n                {\r\n                    "name": "a"\r\n                },\r\n                {\r\n                    "name": "b"\r\n                }\r\n            ],\r\n            "width": 200\r\n        },\r\n        {\r\n            "name": "how",\r\n            "id": 11,\r\n            "x": 601,\r\n            "y": 164,\r\n            "inputConnectors": [\r\n                {\r\n                    "name": "New connector"\r\n                }\r\n            ],\r\n            "outputConnectors": [],\r\n            "width": 200\r\n        },\r\n        {\r\n            "name": "where",\r\n            "id": 12,\r\n            "x": 602,\r\n            "y": 279,\r\n            "inputConnectors": [\r\n                {\r\n                    "name": "New connector"\r\n                }\r\n            ],\r\n            "outputConnectors": [],\r\n            "width": 200\r\n        }\r\n    ],\r\n    "connections": [\r\n        {\r\n            "source": {\r\n                "nodeID": 10,\r\n                "connectorIndex": 0\r\n            },\r\n            "dest": {\r\n                "nodeID": 11,\r\n                "connectorIndex": 0\r\n            }\r\n        },\r\n        {\r\n            "source": {\r\n                "nodeID": 10,\r\n                "connectorIndex": 1\r\n            },\r\n            "dest": {\r\n                "nodeID": 12,\r\n                "connectorIndex": 0\r\n            }\r\n        }\r\n    ]\r\n}', 'teacher', '2015-07-14 19:21:49', ''),
-(1267, '{\r\n    "nodes": [\r\n        {\r\n            "name": "adnan",\r\n            "id": 10,\r\n            "x": 49,\r\n            "y": 223,\r\n            "inputConnectors": [],\r\n            "outputConnectors": [\r\n                {\r\n                    "name": "a"\r\n                },\r\n                {\r\n                    "name": "b"\r\n                }\r\n            ],\r\n            "width": 200\r\n        },\r\n        {\r\n            "name": "how",\r\n            "id": 11,\r\n            "x": 601,\r\n            "y": 164,\r\n            "inputConnectors": [\r\n                {\r\n                    "name": "New connector"\r\n                }\r\n            ],\r\n            "outputConnectors": [],\r\n            "width": 200\r\n        },\r\n        {\r\n            "name": "where",\r\n            "id": 12,\r\n            "x": 602,\r\n            "y": 279,\r\n            "inputConnectors": [\r\n                {\r\n                    "name": "New connector"\r\n                }\r\n            ],\r\n            "outputConnectors": [],\r\n            "width": 200\r\n        }\r\n    ],\r\n    "connections": [\r\n        {\r\n            "source": {\r\n                "nodeID": 10,\r\n                "connectorIndex": 0\r\n            },\r\n            "dest": {\r\n                "nodeID": 11,\r\n                "connectorIndex": 0\r\n            }\r\n        },\r\n        {\r\n            "source": {\r\n                "nodeID": 10,\r\n                "connectorIndex": 1\r\n            },\r\n            "dest": {\r\n                "nodeID": 12,\r\n                "connectorIndex": 0\r\n            }\r\n        }\r\n    ]\r\n}', '', '2015-07-14 19:25:33', ''),
-(1268, '{\r\n    "nodes": [\r\n        {\r\n            "name": "njscnsc",\r\n            "id": 10,\r\n            "x": 0,\r\n            "y": 0,\r\n            "inputConnectors": [],\r\n            "outputConnectors": [],\r\n            "width": 200\r\n        }\r\n    ],\r\n    "connections": []\r\n}', 'teacher', '2015-07-14 19:30:16', ''),
-(1269, '{\r\n    "nodes": [\r\n        {\r\n            "name": "Matrix",\r\n            "id": 10,\r\n            "x": 21,\r\n            "y": 191,\r\n            "inputConnectors": [],\r\n            "outputConnectors": [\r\n                {\r\n                    "name": "1"\r\n                },\r\n                {\r\n                    "name": "2"\r\n                }\r\n            ],\r\n            "width": 200\r\n        },\r\n        {\r\n            "name": "Introduction To Matrix",\r\n            "id": 12,\r\n            "x": 393,\r\n            "y": 250,\r\n            "inputConnectors": [\r\n                {\r\n                    "name": "1"\r\n                }\r\n            ],\r\n            "outputConnectors": [],\r\n            "width": 200\r\n        },\r\n        {\r\n            "name": "Order Of Matrix",\r\n            "id": 11,\r\n            "x": 395,\r\n            "y": 67,\r\n            "inputConnectors": [\r\n                {\r\n                    "name": "1"\r\n                }\r\n            ],\r\n            "outputConnectors": [\r\n                {\r\n                    "name": "1"\r\n                },\r\n                {\r\n                    "name": "2"\r\n                },\r\n                {\r\n                    "name": "3"\r\n                }\r\n            ],\r\n            "width": 200\r\n        },\r\n        {\r\n            "name": "Multiplication Of Matrix",\r\n            "id": 13,\r\n            "x": 695,\r\n            "y": 83,\r\n            "inputConnectors": [\r\n                {\r\n                    "name": "1"\r\n                }\r\n            ],\r\n            "outputConnectors": [],\r\n            "width": 200\r\n        },\r\n        {\r\n            "name": "Add/Sub of Matrix",\r\n            "id": 15,\r\n            "x": 703,\r\n            "y": 235,\r\n            "inputConnectors": [\r\n                {\r\n                    "name": "1"\r\n                }\r\n            ],\r\n            "outputConnectors": [],\r\n            "width": 200\r\n        },\r\n        {\r\n            "name": "Equal Of matrix",\r\n            "id": 16,\r\n            "x": 712,\r\n            "y": 372,\r\n            "inputConnectors": [\r\n                {\r\n                    "name": "1"\r\n                }\r\n            ],\r\n            "outputConnectors": [],\r\n            "width": 200\r\n        }\r\n    ],\r\n    "connections": [\r\n        {\r\n            "source": {\r\n                "nodeID": 10,\r\n                "connectorIndex": 0\r\n            },\r\n            "dest": {\r\n                "nodeID": 11,\r\n                "connectorIndex": 0\r\n            }\r\n        },\r\n        {\r\n            "source": {\r\n                "nodeID": 10,\r\n                "connectorIndex": 1\r\n            },\r\n            "dest": {\r\n                "nodeID": 12,\r\n                "connectorIndex": 0\r\n            }\r\n        },\r\n        {\r\n            "source": {\r\n                "nodeID": 11,\r\n                "connectorIndex": 0\r\n            },\r\n            "dest": {\r\n                "nodeID": 13,\r\n                "connectorIndex": 0\r\n            }\r\n        },\r\n        {\r\n            "source": {\r\n                "nodeID": 11,\r\n                "connectorIndex": 1\r\n            },\r\n            "dest": {\r\n                "nodeID": 15,\r\n                "connectorIndex": 0\r\n            }\r\n        },\r\n        {\r\n            "source": {\r\n                "nodeID": 11,\r\n                "connectorIndex": 2\r\n            },\r\n            "dest": {\r\n                "nodeID": 16,\r\n                "connectorIndex": 0\r\n            }\r\n        }\r\n    ]\r\n}', 'teacher', '2015-07-15 03:01:22', '');
+INSERT INTO `concept-maps` (`map_id`, `map_data`, `map_created_by`, `created_on`, `name`, `map_title`) VALUES
+(1281, '{\r\n    "nodes": [\r\n        {\r\n            "name": "a",\r\n            "id": 10,\r\n            "x": 39,\r\n            "y": 71,\r\n            "inputConnectors": [],\r\n            "outputConnectors": [\r\n                {\r\n                    "name": "1"\r\n                }\r\n            ],\r\n            "width": 200\r\n        },\r\n        {\r\n            "name": "2",\r\n            "id": 11,\r\n            "x": 424,\r\n            "y": 81,\r\n            "inputConnectors": [\r\n                {\r\n                    "name": "1"\r\n                }\r\n            ],\r\n            "outputConnectors": [],\r\n            "width": 200\r\n        }\r\n    ],\r\n    "connections": [\r\n        {\r\n            "source": {\r\n                "nodeID": 10,\r\n                "connectorIndex": 0\r\n            },\r\n            "dest": {\r\n                "nodeID": 11,\r\n                "connectorIndex": 0\r\n            }\r\n        }\r\n    ]\r\n}', 'teacher', '2015-08-09 05:44:09', 'Mkioo', ''),
+(1304, '{\r\n    "nodes": [\r\n        {\r\n            "name": "New Node",\r\n            "id": 10,\r\n            "x": 351,\r\n            "y": 164,\r\n            "inputConnectors": [],\r\n            "outputConnectors": [],\r\n            "width": 200\r\n        }\r\n    ],\r\n    "connections": []\r\n}', 'teacher', '2015-08-09 08:56:43', 'dsdsdsdd', ''),
+(1305, '{\r\n    "nodes": [\r\n        {\r\n            "name": "dsfsdfs",\r\n            "id": 10,\r\n            "x": 0,\r\n            "y": 0,\r\n            "inputConnectors": [],\r\n            "outputConnectors": [],\r\n            "width": 200\r\n        }\r\n    ],\r\n    "connections": []\r\n}', 'teacher', '2015-08-09 08:58:03', 'scsdfcsdcsdc', ''),
+(1306, '{\r\n    "nodes": [\r\n        {\r\n            "name": "New Node",\r\n            "id": 10,\r\n            "x": 0,\r\n            "y": 0,\r\n            "inputConnectors": [],\r\n            "outputConnectors": [],\r\n            "width": 200\r\n        }\r\n    ],\r\n    "connections": []\r\n}', 'teacher', '2015-08-09 09:00:24', 'sjcscncj', ''),
+(1307, '{\r\n    "nodes": [\r\n        {\r\n            "name": "Intro to Matrix",\r\n            "id": 10,\r\n            "x": 20,\r\n            "y": 189,\r\n            "inputConnectors": [],\r\n            "outputConnectors": [\r\n                {\r\n                    "name": "1"\r\n                },\r\n                {\r\n                    "name": "2"\r\n                }\r\n            ],\r\n            "width": 200\r\n        },\r\n        {\r\n            "name": "Addition/Sub Matrix",\r\n            "id": 11,\r\n            "x": 407,\r\n            "y": 264,\r\n            "inputConnectors": [\r\n                {\r\n                    "name": "1"\r\n                }\r\n            ],\r\n            "outputConnectors": [],\r\n            "width": 200\r\n        },\r\n        {\r\n            "name": "Mul Matrix",\r\n            "id": 12,\r\n            "x": 399,\r\n            "y": 145,\r\n            "inputConnectors": [\r\n                {\r\n                    "name": "1"\r\n                }\r\n            ],\r\n            "outputConnectors": [],\r\n            "width": 200\r\n        }\r\n    ],\r\n    "connections": [\r\n        {\r\n            "source": {\r\n                "nodeID": 10,\r\n                "connectorIndex": 0\r\n            },\r\n            "dest": {\r\n                "nodeID": 12,\r\n                "connectorIndex": 0\r\n            }\r\n        },\r\n        {\r\n            "source": {\r\n                "nodeID": 10,\r\n                "connectorIndex": 1\r\n            },\r\n            "dest": {\r\n                "nodeID": 11,\r\n                "connectorIndex": 0\r\n            }\r\n        }\r\n    ]\r\n}', 'teacher', '2015-08-09 09:10:03', 'Mtrix', '');
 
 -- --------------------------------------------------------
 
@@ -93,7 +86,48 @@ INSERT INTO `dest_node` (`node_id`, `connector_code`, `map_id`) VALUES
 (12, 0, 1269),
 (13, 0, 1269),
 (15, 0, 1269),
-(16, 0, 1269);
+(16, 0, 1269),
+(11, 0, 1271),
+(12, 0, 1271),
+(10, 0, 1272),
+(10, 0, 1273),
+(11, 0, 1274),
+(11, 0, 1275),
+(11, 0, 1276),
+(11, 0, 1277),
+(11, 0, 1278),
+(11, 0, 1279),
+(11, 0, 1280),
+(11, 0, 1281),
+(11, 0, 1282),
+(12, 0, 1283),
+(11, 0, 1283),
+(11, 0, 1284),
+(11, 0, 1286),
+(12, 0, 1288),
+(11, 0, 1288),
+(12, 0, 1291),
+(11, 0, 1291),
+(12, 0, 1292),
+(11, 0, 1292),
+(12, 0, 1293),
+(11, 0, 1293),
+(12, 0, 1294),
+(11, 0, 1294),
+(12, 0, 1296),
+(11, 0, 1296),
+(12, 0, 1297),
+(11, 0, 1297),
+(12, 0, 1298),
+(11, 0, 1298),
+(11, 0, 1299),
+(12, 0, 1299),
+(11, 0, 1300),
+(12, 0, 1300),
+(11, 0, 1301),
+(12, 0, 1301),
+(12, 0, 1307),
+(11, 0, 1307);
 
 -- --------------------------------------------------------
 
@@ -138,7 +172,48 @@ INSERT INTO `input_connection` (`node_id`, `connector_code`, `connector_name`) V
 (51, 0, '1'),
 (52, 0, '1'),
 (53, 0, '1'),
-(54, 0, '1');
+(54, 0, '1'),
+(57, 0, '1'),
+(58, 0, '1'),
+(59, 0, 'New connector'),
+(61, 0, '1'),
+(64, 0, '1'),
+(66, 0, '1'),
+(68, 0, '1'),
+(70, 0, '1'),
+(72, 0, '1'),
+(74, 0, '1'),
+(76, 0, '1'),
+(78, 0, '1'),
+(80, 0, '1'),
+(82, 0, '1'),
+(83, 0, '1'),
+(85, 0, '1'),
+(88, 0, '1'),
+(90, 0, '1'),
+(91, 0, '1'),
+(93, 0, '1'),
+(94, 0, '1'),
+(96, 0, '1'),
+(97, 0, '1'),
+(99, 0, '1'),
+(100, 0, '1'),
+(102, 0, '1'),
+(103, 0, '1'),
+(105, 0, '1'),
+(106, 0, '1'),
+(108, 0, '1'),
+(109, 0, '1'),
+(111, 0, '1'),
+(112, 0, '1'),
+(114, 0, '1'),
+(115, 0, '1'),
+(117, 0, '1'),
+(118, 0, '1'),
+(120, 0, '1'),
+(121, 0, '1'),
+(127, 0, '1'),
+(128, 0, '1');
 
 -- --------------------------------------------------------
 
@@ -152,7 +227,7 @@ CREATE TABLE IF NOT EXISTS `nodes` (
   `nodeID` int(2) NOT NULL,
   `nodeName` varchar(60) NOT NULL,
   `node_content` longblob NOT NULL COMMENT 'topic content'
-) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=129 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `nodes`
@@ -194,7 +269,81 @@ INSERT INTO `nodes` (`map_id`, `node_id`, `nodeID`, `nodeName`, `node_content`) 
 (1269, 51, 11, 'Order Of Matrix', ''),
 (1269, 52, 13, 'Multiplication Of Matrix', ''),
 (1269, 53, 15, 'Add/Sub of Matrix', ''),
-(1269, 54, 16, 'Equal Of matrix', '');
+(1269, 54, 16, 'Equal Of matrix', ''),
+(1270, 55, 10, 'KLKL', ''),
+(1271, 56, 10, 'A', ''),
+(1271, 57, 11, 'B', ''),
+(1271, 58, 12, 'C', ''),
+(1272, 59, 10, 'New Node', ''),
+(1272, 60, 11, 'New Node', ''),
+(1273, 61, 10, '10-ID HY ISKI', ''),
+(1273, 62, 11, '11 ID HY ISKI', ''),
+(1274, 63, 10, 'a', ''),
+(1274, 64, 11, '2', ''),
+(1275, 65, 10, 'a', ''),
+(1275, 66, 11, '2', ''),
+(1276, 67, 10, 'a', ''),
+(1276, 68, 11, '2', ''),
+(1277, 69, 10, 'a', ''),
+(1277, 70, 11, '2', ''),
+(1278, 71, 10, 'a', ''),
+(1278, 72, 11, '2', ''),
+(1279, 73, 10, 'a', ''),
+(1279, 74, 11, '2', ''),
+(1280, 75, 10, 'a', ''),
+(1280, 76, 11, '2', ''),
+(1281, 77, 10, 'a', ''),
+(1281, 78, 11, '2', ''),
+(1282, 79, 10, '1', ''),
+(1282, 80, 11, '2', ''),
+(1283, 81, 10, 'a', ''),
+(1283, 82, 11, 'b', ''),
+(1283, 83, 12, 'c', ''),
+(1284, 84, 10, 'A', ''),
+(1284, 85, 11, 'B', ''),
+(1285, 86, 10, 'sdfsf4', ''),
+(1286, 87, 10, 'A', ''),
+(1286, 88, 11, 'B', ''),
+(1288, 89, 10, 'A', ''),
+(1288, 90, 11, 'B', ''),
+(1288, 91, 12, 'C', ''),
+(1291, 92, 10, 'k', ''),
+(1291, 93, 11, 'l', ''),
+(1291, 94, 12, 'm', ''),
+(1292, 95, 10, 'A', ''),
+(1292, 96, 11, 'B', ''),
+(1292, 97, 12, 'C', ''),
+(1293, 98, 10, 'A', ''),
+(1293, 99, 11, 'B', ''),
+(1293, 100, 12, 'C', ''),
+(1294, 101, 10, 'A', ''),
+(1294, 102, 11, 'B', ''),
+(1294, 103, 12, 'C', ''),
+(1296, 104, 10, 'D', ''),
+(1296, 105, 11, 'M', ''),
+(1296, 106, 12, 'W', ''),
+(1297, 107, 10, 'D', ''),
+(1297, 108, 11, 'M', ''),
+(1297, 109, 12, 'W', ''),
+(1298, 110, 10, 'l', ''),
+(1298, 111, 11, 'm', ''),
+(1298, 112, 12, 'n', ''),
+(1299, 113, 10, '1', ''),
+(1299, 114, 11, '2', ''),
+(1299, 115, 12, '3', ''),
+(1300, 116, 10, 'Kill', ''),
+(1300, 117, 11, 'utttt', ''),
+(1300, 118, 12, 'imm', ''),
+(1301, 119, 10, 'Kill', ''),
+(1301, 120, 11, 'utttt', ''),
+(1301, 121, 12, 'imm', ''),
+(1303, 122, 10, 'asdasd', ''),
+(1304, 123, 10, 'New Node', ''),
+(1305, 124, 10, 'dsfsdfs', ''),
+(1306, 125, 10, 'New Node', ''),
+(1307, 126, 10, 'Intro to Matrix', ''),
+(1307, 127, 11, 'Addition/Sub Matrix', ''),
+(1307, 128, 12, 'Mul Matrix', '');
 
 -- --------------------------------------------------------
 
@@ -236,7 +385,48 @@ INSERT INTO `output_connection` (`node_id`, `connector_code`, `connector_name`) 
 (49, 1, '2'),
 (51, 0, '1'),
 (51, 1, '2'),
-(51, 2, '3');
+(51, 2, '3'),
+(56, 0, '1'),
+(56, 1, '2'),
+(60, 0, 'New connector'),
+(62, 0, '11'),
+(63, 0, '1'),
+(65, 0, '1'),
+(67, 0, '1'),
+(69, 0, '1'),
+(71, 0, '1'),
+(73, 0, '1'),
+(75, 0, '1'),
+(77, 0, '1'),
+(79, 0, '1'),
+(81, 0, '1'),
+(81, 1, '2'),
+(84, 0, '1'),
+(87, 0, '1'),
+(89, 0, '1'),
+(89, 1, '2'),
+(92, 0, '1'),
+(92, 1, '2'),
+(95, 0, '1'),
+(95, 1, '2'),
+(98, 0, '1'),
+(98, 1, '2'),
+(101, 0, '1'),
+(101, 1, '2'),
+(104, 0, '1'),
+(104, 1, '2'),
+(107, 0, '1'),
+(107, 1, '2'),
+(110, 0, '1'),
+(110, 1, '2'),
+(113, 0, '1'),
+(113, 1, '2'),
+(116, 0, '1'),
+(116, 1, '2'),
+(119, 0, '1'),
+(119, 1, '2'),
+(126, 0, '1'),
+(126, 1, '2');
 
 -- --------------------------------------------------------
 
@@ -357,7 +547,48 @@ INSERT INTO `rltn4rm_p2c` (`src_node_id`, `src_Cntcr_INDEX`, `dest_node_id`, `de
 (10, 1, 12, 0, 1269),
 (11, 0, 13, 0, 1269),
 (11, 1, 15, 0, 1269),
-(11, 2, 16, 0, 1269);
+(11, 2, 16, 0, 1269),
+(10, 0, 11, 0, 1271),
+(10, 1, 12, 0, 1271),
+(11, 0, 10, 0, 1272),
+(11, 0, 10, 0, 1273),
+(10, 0, 11, 0, 1274),
+(10, 0, 11, 0, 1275),
+(10, 0, 11, 0, 1276),
+(10, 0, 11, 0, 1277),
+(10, 0, 11, 0, 1278),
+(10, 0, 11, 0, 1279),
+(10, 0, 11, 0, 1280),
+(10, 0, 11, 0, 1281),
+(10, 0, 11, 0, 1282),
+(10, 0, 12, 0, 1283),
+(10, 1, 11, 0, 1283),
+(10, 0, 11, 0, 1284),
+(10, 0, 11, 0, 1286),
+(10, 0, 12, 0, 1288),
+(10, 1, 11, 0, 1288),
+(10, 0, 12, 0, 1291),
+(10, 1, 11, 0, 1291),
+(10, 0, 12, 0, 1292),
+(10, 1, 11, 0, 1292),
+(10, 0, 12, 0, 1293),
+(10, 1, 11, 0, 1293),
+(10, 0, 12, 0, 1294),
+(10, 1, 11, 0, 1294),
+(10, 0, 12, 0, 1296),
+(10, 1, 11, 0, 1296),
+(10, 0, 12, 0, 1297),
+(10, 1, 11, 0, 1297),
+(10, 0, 12, 0, 1298),
+(10, 1, 11, 0, 1298),
+(10, 0, 11, 0, 1299),
+(10, 1, 12, 0, 1299),
+(10, 0, 11, 0, 1300),
+(10, 1, 12, 0, 1300),
+(10, 0, 11, 0, 1301),
+(10, 1, 12, 0, 1301),
+(10, 0, 12, 0, 1307),
+(10, 1, 11, 0, 1307);
 
 -- --------------------------------------------------------
 
@@ -399,7 +630,48 @@ INSERT INTO `src_node` (`node_id`, `connector_code`, `map_id`) VALUES
 (10, 1, 1269),
 (11, 0, 1269),
 (11, 1, 1269),
-(11, 2, 1269);
+(11, 2, 1269),
+(10, 0, 1271),
+(10, 1, 1271),
+(11, 0, 1272),
+(11, 0, 1273),
+(10, 0, 1274),
+(10, 0, 1275),
+(10, 0, 1276),
+(10, 0, 1277),
+(10, 0, 1278),
+(10, 0, 1279),
+(10, 0, 1280),
+(10, 0, 1281),
+(10, 0, 1282),
+(10, 0, 1283),
+(10, 1, 1283),
+(10, 0, 1284),
+(10, 0, 1286),
+(10, 0, 1288),
+(10, 1, 1288),
+(10, 0, 1291),
+(10, 1, 1291),
+(10, 0, 1292),
+(10, 1, 1292),
+(10, 0, 1293),
+(10, 1, 1293),
+(10, 0, 1294),
+(10, 1, 1294),
+(10, 0, 1296),
+(10, 1, 1296),
+(10, 0, 1297),
+(10, 1, 1297),
+(10, 0, 1298),
+(10, 1, 1298),
+(10, 0, 1299),
+(10, 1, 1299),
+(10, 0, 1300),
+(10, 1, 1300),
+(10, 0, 1301),
+(10, 1, 1301),
+(10, 0, 1307),
+(10, 1, 1307);
 
 -- --------------------------------------------------------
 
@@ -466,7 +738,9 @@ ALTER TABLE `quiz_nodes`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`), ADD UNIQUE KEY `user_name` (`user_name`), ADD UNIQUE KEY `user_email` (`user_email`);
+  ADD PRIMARY KEY (`user_id`),
+  ADD UNIQUE KEY `user_name` (`user_name`),
+  ADD UNIQUE KEY `user_email` (`user_email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -476,12 +750,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `concept-maps`
 --
 ALTER TABLE `concept-maps`
-  MODIFY `map_id` int(4) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1270;
+  MODIFY `map_id` int(4) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1308;
 --
 -- AUTO_INCREMENT for table `nodes`
 --
 ALTER TABLE `nodes`
-  MODIFY `node_id` int(4) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=55;
+  MODIFY `node_id` int(4) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=129;
 --
 -- AUTO_INCREMENT for table `quiz_attempts`
 --

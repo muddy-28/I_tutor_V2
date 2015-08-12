@@ -4,7 +4,7 @@ function get_maps($usr)
 {
         $con = connectToDatabase();
 		//SELECT * FROM `concept-maps` WHERE 1
-	 	$sql1 = "SELECT `map_id`, `map_data`, `map_created_by`, `created_on` FROM `concept-maps` WHERE map_created_by='$usr'";
+	 	$sql1 = "SELECT * FROM `concept-maps` WHERE map_created_by='$usr'";
 		$result=mysqli_query($con,$sql1)or die(mysql_error(). "Query Failed");
     
       if (mysql_error()) 
@@ -17,7 +17,7 @@ function get_maps($usr)
 			  
      while ($row = mysqli_fetch_row($result)) 
         {
-		 echo "<br> <a href=\"index.php?page=get_map_data&&data_map_id={$row['0']}\">{$row['0']}</a>";
+		 echo "<br> <a href=\"index.php?page=get_map_data&&data_map_id={$row['0']}\">{$row['4']}</a>";
 		 	$mapi=$row['0'];
 	 }
 } else 
@@ -30,7 +30,7 @@ function get_maps_st()
 {
         $con = connectToDatabase();
 		//SELECT * FROM `concept-maps` WHERE 1
-	 	$sql1 = "SELECT `map_id`, `map_data`, `map_created_by`, `created_on` FROM `concept-maps`";
+	 	$sql1 = "SELECT * FROM `concept-maps`";
 		$result=mysqli_query($con,$sql1)or die(mysql_error(). "Query Failed");
     
       if (mysql_error()) 
@@ -43,7 +43,7 @@ function get_maps_st()
 			  
      while ($row = mysqli_fetch_row($result)) 
         {
-		 echo "<br> <a href=\"index.php?page=get_map_data&&data_map_id={$row['0']}\">{$row['0']}</a>";
+		 echo "<br> <a href=\"index.php?page=get_map_data&&data_map_id={$row['0']}\">{$row['4']}</a>";
 		 	$mapi=$row['0'];
 	 }
 } else 
